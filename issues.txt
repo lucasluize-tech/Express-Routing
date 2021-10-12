@@ -1,0 +1,1 @@
+1. the function mostFrequentOf returns only the first element of the array that appears most times, instead of returning all the elements that appear most times.
