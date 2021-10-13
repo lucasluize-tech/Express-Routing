@@ -11,6 +11,6 @@ describe("test Helper functions", () => {
     })
     test('mode of an array', () => {
         const res = mostFrequentOf(["1", "2", "3", "4", "1"])
-        expect(res).toEqual("1")
+        expect(res).toEqual(1)
     })
 })

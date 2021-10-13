@@ -54,4 +54,21 @@ app.get('/mode', (req, res, next) => {
     res.json(result)
 })
 
+app.get('/all', (req, res, next) => {
+    const { nums } = req.query
+    const arr = nums.split(",")
+    if (!arr.every(n => parseInt(n))) {
+        return res.status(400).send({ message: "Only numbers allowed"})
+    } else if(!req.query){
+        return res.status(400).send({ message: "numbers are required"})  
+    }
+    delete result.value
+    result['operation'] = "all"
+    result['mean'] = meanValueOf(arr)
+    result['median'] = medianValueOf(arr)
+    result['mode'] = mostFrequentOf(arr)
+
+    return res.json(result)
+}) 
+
 app.listen(3000, () => console.log('App on port 3000 started'))

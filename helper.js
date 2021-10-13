@@ -22,7 +22,7 @@ function medianValueOf(array) {
 function mostFrequentOf(array) {
     let counts = {}
     let compare = 0
-    let mostFrequent = []
+    let mostFrequent;
 
     for (let i = 0; i < array.length; i++) {
         let num = array[i]
@@ -30,12 +30,11 @@ function mostFrequentOf(array) {
         else{counts[num] += 1}
         if (counts[num] > compare) {
             compare = counts[num]
-            if(mostFrequent.includes(array[i])) continue
-            mostFrequent.push(array[i])
+            mostFrequent = array[i]
         }
     }
     
-    return mostFrequent.join(",")
+    return parseInt(mostFrequent)
 }
 
 module.exports = {
